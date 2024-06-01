@@ -6,6 +6,7 @@ data = fileobj.read()
 
 file_size_inbytes = data[4:8]
 file_size = int.from_bytes(file_size_inbytes, byteorder = "little")
+print(file_size)
 
 num_of_channels_in_byte = data[22:24]
 num_of_channels = int.from_bytes(num_of_channels_in_byte, byteorder = "little")
@@ -30,6 +31,4 @@ spectr = np.fft.fft(music_amps)
 abs_specrte = abs(spectr)
 plt.plot(xdata_freqs, abs_specrte)
 plt.show()
-
-pass
 print(music_amps)
